@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="PLD6Aziz.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLD</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="name">
+                <h1>WanderMind</h1>
+            </div>
+
+             
+
+            
+            
+            <div class="navigation" id="nav">
+                <nav>
+                    <a href="#"><span>Home</span></a>
+                    <a href="#"><span>Features</span></a>
+                    <a href="#"><span>Testimonials</span></a>
+                    <a href="#"><span>Contact</span></a>
+
+                    
+                </nav>
+            </div>
+
+            <div class="hamburger" id="hamburger">
+            
+            <span></span>
+            <span></span>
+            <span></span>
+            </div>
+        </div>
+    </header>
+
+
+    <section class="hero">
+        <h1>Plan Less. Experience More.</h1>
+    </section>
+    
+    <script>
+  // Hamburger toggle
+  const hamburger = document.getElementById('hamburger');
+  const nav = document.getElementById('nav');
+
+  hamburger.addEventListener('click', () => {
+    nav.classList.toggle('nav-active');
+    hamburger.classList.toggle('toggle');
+  });
+
+  // Contact form validation
+  const form = document.getElementById('contact-form');
+  const successMsg = document.getElementById('success-msg');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const text = form.text.value.trim();
+
+    if (name && email && text) {
+      successMsg.hidden = false;
+      form.reset();
+    } else {
+      alert("Please fill out all fields correctly.");
+    }
+  });
+</script>
+</body>
+</html>

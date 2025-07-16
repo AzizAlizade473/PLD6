@@ -1,0 +1,136 @@
+$nav-bg-color: #002855;
+$color-white:#FFFFFF;
+$accent-yellow: #c99724;
+$name-color:#FFD166;
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.header {
+    display: flex;
+    
+    justify-content: space-between;
+    padding: 4rem 4rem;
+    background-color: $nav-bg-color;
+}
+
+
+.navigation {
+    nav {
+        display: flex;
+        gap: 2rem;
+        
+        
+
+    }
+
+    a {
+        text-decoration: none;
+        color: $color-white;
+    }
+
+    a:active {
+        text-decoration: none;
+    }
+
+    a:hover {
+        color:$name-color;
+        transition: color 0.3s ease-in-out;
+    }
+}
+
+
+.name {
+    h1 {
+        color: $name-color;
+    }
+}
+
+@media (max-width:768px) {
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      cursor: pointer;
+    }
+    .hamburger {
+        span {
+            width: 30px;
+            height: 3px;
+            background: #000;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+
+        }
+      
+    }
+
+    /* X icon animation */
+    .hamburger.toggle span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburger.toggle span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.toggle span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* ---------- NAVIGATION (mobile first) ---------- */
+    @media (max-width: 768px) {
+  .navigation {
+    display: none;
+
+    &.nav-active {
+      display: block;
+      
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      
+      width: 100%;
+      padding: 1rem 0;
+    }
+    a {
+        color: #ffffff;
+    }
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+
+    span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: #000000;
+    }
+  }
+}
+
+
+      
+    }
+
+
+.hero {
+      min-height: 100vh;
+      background: url('https://i.postimg.cc/ZnX8T92P/image.png') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      color: #fff;
+    }
+
+    
+
+    
+    
