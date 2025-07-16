@@ -24,7 +24,7 @@ h1, h2, h3, .logo {
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center; // ✅ Add this line
+  align-items: center; 
   padding: 4rem 4rem;
   background-color: $nav-bg-color;
 }
@@ -79,7 +79,7 @@ h1, h2, h3, .logo {
       
     }
 
-    /* X icon animation */
+    
     .hamburger.toggle span:nth-child(1) {
       transform: rotate(45deg) translate(5px, 5px);
     }
@@ -90,7 +90,7 @@ h1, h2, h3, .logo {
       transform: rotate(-45deg) translate(5px, -5px);
     }
 
-    /* ---------- NAVIGATION (mobile first) ---------- */
+   
     @media (max-width: 768px) {
   .navigation {
     display: none;
@@ -160,8 +160,8 @@ h1, h2, h3, .logo {
   }
 
   button {
-  background-color: $name-color; // your yellow
-  color: #000; // keeps it readable
+  background-color: $name-color; 
+  color: #000; 
   width: 140px;
   height: 45px;
   border-radius: 30px;
@@ -297,7 +297,7 @@ h1, h2, h3, .logo {
       }
 
       .footer {
-    display: flex; // ✅ add this!
+    display: flex; 
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -344,7 +344,7 @@ h1, h2, h3, .logo {
   gap: 1rem;
 
   button {
-    background-color: $name-color; // your yellow
+    background-color: $name-color; 
     color: #000;
     border: none;
     padding: 0.6rem 1.2rem;
@@ -462,9 +462,9 @@ h1, h2, h3, .logo {
 .separator {
   border: none;
   height: 2px;
-  background-color: $name-color; /* your theme color */
+  background-color: $name-color; 
   
-  width: 100%; /* optional, line length */
+  width: 100%; 
   margin-left: auto;
   margin-right: auto;
 }
