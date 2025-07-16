@@ -19,8 +19,8 @@
             
             <div class="navigation" id="nav">
                 <nav>
-                    <a href="#"><span>Home</span></a>
-                    <a href="#"><span>Features</span></a>
+                    <a href="#home"><span>Home</span></a>
+                    <a href="#fea"><span>Features</span></a>
                     <a href="#"><span>Testimonials</span></a>
                     <a href="#"><span>Contact</span></a>
 
@@ -38,21 +38,159 @@
     </header>
 
 
-    <section class="hero">
+    <section class="hero" id="home">
         <h1>Plan Less. Experience More.</h1>
+        <h2>Let WanderMind craft your perfect trip — personalized, effortless, and adventurous.</h2>
+        <button href="#contact-form">Call to action</button>
     </section>
-    
-    <script>
-  // Hamburger toggle
-  const hamburger = document.getElementById('hamburger');
-  const nav = document.getElementById('nav');
 
-  hamburger.addEventListener('click', () => {
-    nav.classList.toggle('nav-active');
-    hamburger.classList.toggle('toggle');
+    <section class="features" id="fea">
+        <div class="boxes">
+            <div class="box">
+                <h1>🧠 Smart Trip Planning</h1>
+                <h2>Let WanderMind build your ideal itinerary — just tell us where and when!</h2>
+
+            </div>
+
+            <div class="box">
+                <h1>🗺️ Personalized Destinations</h1>
+                <h2>We recommend hidden gems based on your style, mood, and budget.</h2>
+
+            </div>
+
+            <div class="box">
+                <h1>🕓 Real-Time Travel Updates</h1>
+                <h2>Stay informed with live flight alerts, weather shifts, and itinerary changes.</h2>
+
+            </div>
+
+            <div class="box">
+                <h1>💡 AI-Powered Suggestions</h1>
+                <h2>From packing lists to must-see sights — get smart help with every detail.</h2>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="testimonials" class="testimonial-slider">
+  <h2>What Our Travelers Say</h2>
+  
+  <div class="slider">
+    <div class="testimonial active">
+      <img src="https://i.postimg.cc/Gh6C92hS/image.png" alt="User 1">
+      <h4>Emily R.</h4>
+      <p>"WanderMind made my trip effortless and unforgettable!"</p>
+    </div>
+
+    <div class="testimonial">
+      <img src="https://i.postimg.cc/15VxxQc0/image.png" alt="User 2">
+      <h4>Jamal K.</h4>
+      <p>"I discovered places I never would’ve found on my own."</p>
+    </div>
+
+    <div class="testimonial">
+      <img src="https://i.postimg.cc/bv8422XL/image.png" alt="User 3">
+      <h4>Ana P.</h4>
+      <p>"Super easy, smart, and fun to use. Loved every moment."</p>
+    </div>
+  </div>
+
+  <div class="slider-controls">
+    <button id="prev">&#8592;</button>
+    <button id="next">&#8594;</button>
+  </div>
+</section>
+
+
+
+<section class="form" aria-labelledby="contact-heading">
+  <div class="form-div">
+    <h1 id="contact-heading">Contact Us</h1>
+
+    <form class="form-sec" id="contact-form" novalidate>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required aria-required="true" />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required aria-required="true" />
+      </div>
+
+      <div class="form-group">
+        <label for="text" class="message-text">Message:</label>
+        <textarea id="text" name="text" rows="5" required aria-required="true"></textarea>
+      </div>
+      <div class="btn2">
+      <button type="submit" class="submit-btn">Send</button>
+      
+      </div>
+      <p id="success-msg" class="success-msg" role="alert" hidden>✅ Your message has been sent!</p>
+    </form>
+    
+  </div>
+</section>
+<hr class="separator" />
+
+
+<footer class="footer">
+  <div class="footer-left">
+    <p> Copyright &copy; 2025 NVIDIA Corporation</p>
+  </div>
+  <div class="footer-right">
+    <a href="#" aria-label="Facebook"><img src="https://i.postimg.cc/WbNKVVKY/Facebook-White.png" alt="Facebook" /></a>
+    <a href="#" aria-label="Instagram"><img src="https://i.postimg.cc/hvSCK8CQ/Instagram-White.png" alt="Instagram" /></a>
+    <a href="#" aria-label="LinkedIn"><img src="https://i.postimg.cc/cLj5fnJP/Twitter-White.png" alt="Twitter" /></a>
+  </div>
+</footer>
+
+
+    
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // ✅ Hamburger toggle
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('nav-active');
+      hamburger.classList.toggle('toggle');
+    });
+
+    // ✅ Testimonial slider
+    const testimonials = document.querySelectorAll('.testimonial');
+    const nextBtn = document.getElementById('next');
+    const prevBtn = document.getElementById('prev');
+    let index = 0;
+
+    function showTestimonial(i) {
+      testimonials.forEach((t, idx) => {
+        t.classList.remove('active');
+        if (idx === i) t.classList.add('active');
+      });
+    }
+
+    function nextSlide() {
+      index = (index + 1) % testimonials.length;
+      showTestimonial(index);
+    }
+
+    function prevSlide() {
+      index = (index - 1 + testimonials.length) % testimonials.length;
+      showTestimonial(index);
+    }
+
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+
+    showTestimonial(index); // show first on load
+    setInterval(nextSlide, 5000); // auto rotate
   });
 
-  // Contact form validation
+
   const form = document.getElementById('contact-form');
   const successMsg = document.getElementById('success-msg');
 
@@ -71,5 +209,6 @@
     }
   });
 </script>
+
 </body>
 </html>
